@@ -164,11 +164,21 @@ html{
     text-align: center;
     /* box-shadow: var(--box-shadow); */
     padding: 2rem;
+    border-radius: 2rem;
 }
+
 .support-container .box p{
     font-size: 1.3rem;
     margin-top:1.3rem;
     line-height: 2rem;
+}
+/* .support-container .box.active{
+    background: var(--default-color);
+    color: #fff;
+} */
+.support-container .box:hover{
+    background: var(--default-color);
+    color: #fff;
 }
 
 @media (max-width:1225px){
