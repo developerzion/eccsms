@@ -40,6 +40,8 @@ html{
 /* End general attribute  */
 
 .header{
+    position: fixed;
+    left: 0; right: 0; top: 0;
     background: #fff;
     display: flex;
     align-items: center;
@@ -66,7 +68,7 @@ html{
     font-weight: 500;
 }
 .header .navbar.active{
-    left: 2rem;
+    left: 0rem;
 }
 .header .navbar a:hover{
     color: var(--default-color);
@@ -102,7 +104,9 @@ html{
 }
 
 
-
+.banner{
+    margin-top: 10rem;
+}
 .col-2{
     display: flex;
     align-items: center;
@@ -178,14 +182,6 @@ html{
     margin-top:1.3rem;
     line-height: 2.2rem;
 }
-/* .support-container .box.active{
-    background: var(--default-color);
-    color: #fff;
-} */
-/* .support-container .box:hover{
-    background: #6c86bc;
-    color: #fff;
-} */
 
 
 .enterprise{
@@ -198,9 +194,7 @@ html{
     }
 }
 @media (max-width:1100px){
-    /* html{
-        font-size: 56%;
-    } */
+
     .header{
         padding: 3rem 4%;
     }
@@ -213,10 +207,9 @@ html{
   
     .header .navbar{
         position: absolute;
-        box-shadow: var(--box-shadow);
-        top: 12rem;
+        top: 9.5rem;
         width: 40rem;
-        height: auto;
+        height: 100vh;
         background: #fff;
         left: -120%;
         padding: 1rem 1rem;
