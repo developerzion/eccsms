@@ -208,7 +208,9 @@ html{
 
 }
 @media (max-width:1000px){
-  
+    .text h1{
+        font-size: 2.4rem;
+    }
     .header .navbar{
         position: absolute;
         top: 9.5rem;
