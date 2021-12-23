@@ -150,11 +150,12 @@ html{
 }
 .text .text-footer a{
     font-size: 1.5rem;
-    padding: 1.6rem 2.3rem;
+    padding: 1.6rem 2.6rem;
     border-radius: 3rem;
     display: inline-block;
-    background: var(--default-color);
-    color: #fff;
+    border: 2px solid var(--default-color);
+    /* background: var(--default-color); */
+    color: var(--default-color);
     font-weight: 600;
 }
 .text .text-footer img{
