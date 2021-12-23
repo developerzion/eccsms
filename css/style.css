@@ -27,6 +27,13 @@ html{
 .img img{
     width: 100%;
 }
+.section-header h1{
+    /* width: 60rem; */
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+
 
 /* End general attribute  */
 
@@ -144,6 +151,26 @@ html{
     margin-left: -1rem;
 }
 
+.support-container{
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap:wrap ;
+    gap: 3rem;
+
+}
+.support-container .box{
+    flex: 1 1 20rem;
+    text-align: center;
+    /* box-shadow: var(--box-shadow); */
+    padding: 2rem;
+}
+.support-container .box p{
+    font-size: 1.3rem;
+    margin-top:1.3rem;
+    line-height: 2rem;
+}
+
 @media (max-width:1225px){
     html{
         font-size: 58%;
@@ -183,5 +210,8 @@ html{
     }
     .header .mobile{
         display: block;
+    }
+    .support-container .box p{
+        font-size: 1.5rem;
     }
 }
