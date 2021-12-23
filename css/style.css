@@ -28,9 +28,11 @@ html{
     width: 100%;
 }
 .section-header h1{
-    /* width: 60rem; */
     text-align: center;
     font-size: 1.8rem;
+}
+.seperator{
+    height: 10rem;
 }
 
 
@@ -101,14 +103,14 @@ html{
 
 
 
-.banner .col-2{
+.col-2{
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 3rem;
     flex-wrap: wrap;
 }
-.banner .col-2 .box{
+.col-2 .box{
     flex: 1 1 35rem;
 }
 
@@ -178,8 +180,13 @@ html{
     color: #fff;
 } */
 .support-container .box:hover{
-    background: var(--default-color);
+    background: #6c86bc;
     color: #fff;
+}
+
+
+.enterprise{
+    background: #d2e2ee;
 }
 
 @media (max-width:1225px){
