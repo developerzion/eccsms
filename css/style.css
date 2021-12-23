@@ -123,14 +123,14 @@ html{
 }
 .text h3{
     font-size: 1.7rem;
-    font-weight: 500;
+    font-weight: 600;
     line-height: 2.4rem;
     margin: 1rem 0;
 
 }
 .text h5{
     font-size: 1.4rem;
-    font-weight: 400;
+    font-weight: 500;
     text-align: justify;
     line-height: 2.4rem;
 }
@@ -140,19 +140,15 @@ html{
     align-items: center;
     margin-top: 2rem;
 }
-/* .text .text-footer a{
-    min-width: 10rem;
-    text-align: center;
-    line-height: 6rem;
-    height: 6rem;
+.text .text-footer a{
     font-size: 1.5rem;
-    padding: 0 2rem;
-    border-radius: 1rem;
+    padding: 1.6rem 2.3rem;
+    border-radius: 3rem;
     display: inline-block;
     background: var(--default-color);
     color: #fff;
     font-weight: 600;
-} */
+}
 .text .text-footer img{
     width: 180px;
     margin-left: -1rem;
