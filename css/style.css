@@ -292,7 +292,7 @@ html{
     top: 40%;
     background: #fff;
     width: 70%;
-    height: 50rem;
+    min-height: 50rem auto;
     transform: translate(-50%, -50%);
     border-radius: 2.5rem;
     padding: 4rem 3rem;
