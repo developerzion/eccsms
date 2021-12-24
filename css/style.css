@@ -434,10 +434,10 @@ html{
         width: 100%;
     }
     .login-container .box form.login{
-        top: 17rem;
+        top: 10rem;
     }
     .login-container .box form.signUp{
-        top: 31rem;
+        top: 18rem;
     } 
 
 }
