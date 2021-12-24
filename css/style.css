@@ -256,6 +256,7 @@ html{
     height: 100vh;
 }
 .login-container .box{
+    position: relative;
     margin-top: 10rem;
     flex: 1 1 40rem;
 }
@@ -289,7 +290,8 @@ html{
 .login-container .box form{
     position: absolute;
     left: 50%;
-    top: 40%;
+    /* top: 50%; */
+    top: 24rem;
     background: #fff;
     width: 70%;
     min-height: 50rem auto;
@@ -424,9 +426,9 @@ html{
     .support-container .box p{
         font-size: 1.5rem;
     }
-    .login-container{
-        gap: 20rem; 
-    }
+    /* .login-container .signup-pad{
+        gap: 25rem; 
+    } */
     .login-container .box{
         margin-top: 7rem;
     }
