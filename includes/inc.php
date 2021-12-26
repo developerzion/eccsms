@@ -7,16 +7,41 @@ class Connection{
 
 	public function __construct(){
 		try {
-			$this->con = new PDO("mysql:server=localhost;dbname=shikini","root","");
+			$this->con = new PDO("mysql:server=localhost;dbname=smsencrption","root","");
 			$this->con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		} catch (Exception $ex) {
 			die($ex->getMessage());
 		}		
 	}
-	public function exec($query, $data){
-		$this->stmt = $this->con->prepare($query);
-		$response = $this->stmt->execute($data);
-		return $response;
+	public function signup($query){
+
+		$fullname = $_POST['fullname'];
+		$username = $_POST['username'];
+		$password = $_POST['password'];
+		$cpassword = $_POST['cpassword'];
+
+		$chkq = "SELECT * FROM tbl_client WHERE `username`='$username'";
+
+		if($password !== $cpassword){
+			return "<div class='danger'><span class='fa fa-times'></span>&nbsp; Passwords do not match</div>";
+		}else{
+			
+			if($this->numRows($chkq) < 1){
+				$this->stmt = $this->con->prepare($query);
+				$response = $this->stmt->execute([$fullname,$_POST['username'],sha1($password)]);
+				if($response)
+				return "<div class='success'>Registration completed</div>";
+			}
+			else{
+				return  "<div class='danger'><span class='fa fa-times'></span>&nbsp; Username is not available</div>";;
+				
+			}
+		
+		}
+
+		
+		
+		
 	}
 	public function fetchAll($querystring){
 		$this->stmt = $this->con->prepare($querystring);
@@ -47,24 +72,7 @@ class Connection{
 			return $e->getMessage();
 		}		
 	}
-	function uploadFiles($files){
-		$append = date("dmyhis");
-		$returnedfiles = "";
-		for($i=0 ; $i < count($files['name']); $i++){
-			$eachfile = $files['name'][$i];
-			$tmpFilePath = $files['tmp_name'][$i];	
-			$ext = pathinfo($eachfile, PATHINFO_EXTENSION);
-			$accept = array("png","jpg","jpeg");
-			if(!in_array($ext, $accept)) continue;
-			else{
-				$filename = $append."_".$files['name'][$i];
-				$newFilePath = "../../uploaded/" . $filename;
-				move_uploaded_file($tmpFilePath, $newFilePath);
-				$returnedfiles .= $filename . "|";
-			}
-		}
-		return $returnedfiles;	
-	}
+	
 	function numRows($query){
 		$this->stmt = $this->con->prepare($query);
 		$this->stmt->execute();		
@@ -82,24 +90,7 @@ class Connection{
 		}
 		return (int)$number;
 	}
-	function addProperty($data){
-		try{
-			$date = date("d-F-Y h:i:s");
-			
-			$query = "SELECT * FROM tbl_property WHERE  propertyType=? AND propertyDeal=? AND propertyDescription=?";
-			$count = $this->rowcount($query, [$data['propstype'],$data['propsdeal'],$data['propsdesc']]);	
-			if($count < 1){
-				$uploadresponse =  $this->uploadFiles($data["propsimage"]);		
-				$this->stmt = $this->con->prepare("INSERT INTO `tbl_property`(`propertyCode`,`propertyType`,`propertyDeal`, `propertyDescription`,`propertyAddress`, `propertyLocation`, `propertyPrice`, `propertyImages`,`propertyDate`) VALUES (?,?,?,?,?,?,?,?,?)");
-				$res = $this->stmt->execute([$data['random'], $data['propstype'],$data['propsdeal'],$data['propsdesc'],$data['propsadd'],$data['propslocation'],$data['propsprice'],$uploadresponse,$date]);
-				return $res;
-			}else{
-				return 2;
-			}
-		}catch (Exception $ex) {
-			die($ex->getMessage());
-		}		
-	}
+	
 }
 
 $conn = new Connection;

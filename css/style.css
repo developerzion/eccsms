@@ -43,6 +43,29 @@ html{
     height: 10rem;
 }
 
+.danger{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 4rem;
+    background: rgb(184, 11, 11);
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.4rem;
+    padding: 0 1.5rem;
+}
+.success{
+    width: 100%;
+    height: 4rem;
+    background: rgb(16, 170, 16);
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 4rem;
+    padding: 0 1.5rem;
+}
+
 
 
 /* End general attribute  */
